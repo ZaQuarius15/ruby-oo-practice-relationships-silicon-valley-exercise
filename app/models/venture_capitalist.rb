@@ -9,20 +9,6 @@ class VentureCapitalist
         @total_worth = total_worth
         @@all << self
     end
-
-
-    def self.all
-        @@all
-    end
-
-
-    def self.tres_commas_club
-        @@all.each_with_object([]) do |ven, final|
-           if ven.total_worth >= 1000000000
-                final << ven
-           end
-        end
-    end
     
     def offer_contract(startup, type, investment)
         FundingRound.new(startup, self, type, investment)
@@ -66,6 +52,18 @@ class VentureCapitalist
             end
         end
         total_invested
+    end
+
+    def self.all
+        @@all
+    end
+
+    def self.tres_commas_club
+        @@all.each_with_object([]) do |ven, final|
+           if ven.total_worth >= 1000000000
+                final << ven
+           end
+        end
     end
 
 end

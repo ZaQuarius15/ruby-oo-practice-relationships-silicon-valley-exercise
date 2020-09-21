@@ -64,8 +64,6 @@ class Startup
     end
 
 
-    private
-
     def self.all
         @@all
     end
@@ -81,8 +79,5 @@ class Startup
             final << startup.domain
         end
     end
-
-    
-
 
 end
